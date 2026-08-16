@@ -1,0 +1,33 @@
+:root {
+
+    /* AIDA Specific */
+    --aida-background: #FFF;
+    --aida-font: system-ui, sans-serif;
+
+    /* Colors */
+    --aida-orange: #fabc02;
+    --aida-blue: #2550fe;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--aida-background);
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    font-family: var(--aida-font) !important;
+    letter-spacing: -0.025em;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+}
