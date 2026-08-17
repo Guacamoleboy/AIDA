@@ -57,5 +57,5 @@ While I understand my teachers point of view with **Hugo** and **Blowfish templa
 ---
 
 <div align="center">
-    <sub>MoodMap - Keeping track of YOUR mood.</sub>
+    <sub>AIDA - AI Drevne Applikationer</sub>
 </div>
