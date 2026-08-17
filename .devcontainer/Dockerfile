@@ -7,6 +7,16 @@
 # Last updated: 17/08-2026
 
 # FILE PURPOSE
-#   - N/A
+#   - Sets the development environment
 
 # -------------------------------------------------------------------------------------------------------
+
+FROM node:22-alpine
+
+WORKDIR /workspace
+
+RUN apk add --no-cache \
+    git \
+    bash
+
+CMD ["sleep", "infinity"]
