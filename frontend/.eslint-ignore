@@ -1,0 +1,6 @@
+**/typings/**
+**/.build/**
+**/node_modules/**
+**/out/**
+**/out-*/**
+**/dist/**/*
