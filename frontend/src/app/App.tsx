@@ -1,8 +1,8 @@
 // Pathing
 // _______
-// src/App.jsx
+// src/app/App.jsx
 
-import AppRoutes from '@routes/AppRoutes'
+import AppRoutes from '@/app/routes/AppRoutes'
 
 const App = () => (
   <AppRoutes />

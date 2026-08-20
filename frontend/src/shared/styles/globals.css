@@ -1,0 +1,74 @@
+:root {
+
+    /* AIDA Specific */
+    --aida-background: #feb50b;
+    --aida-font: system-ui, sans-serif;
+
+    /* Colors */
+    --aida-orange: #fabc02;
+    --aida-blue: #2550fe;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--aida-background);
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    font-family: var(--aida-font) !important;
+    letter-spacing: -0.025em;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+.homePage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.blogPage {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 5rem 2rem;
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+.appLayout {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.blogLayout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.appMain {
+    flex: 1;
+    min-height: 0;
+}

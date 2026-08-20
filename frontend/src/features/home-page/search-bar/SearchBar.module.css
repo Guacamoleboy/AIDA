@@ -1,0 +1,67 @@
+.searchBarWrapper {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    max-width: 700px;
+    min-height: 3rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.1s ease-in-out;
+}
+
+.searchBarWrapper:has(.searchInput:focus) {
+    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+.searchInput,
+.searchButton {
+    background-color: transparent;
+}
+
+.searchInput {
+    flex: 1;
+    min-width: 0;
+    padding: 0.75rem 1rem;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.searchInput::placeholder {
+    color: inherit;
+    opacity: 0.7;
+}
+
+.searchInput:focus {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+.searchBarWrapper:has(.searchInput:focus) .searchButton {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.searchButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    flex-shrink: 0;
+    border: 0;
+    border-left: 2px solid rgba(0, 0, 0, 0.05);
+    cursor: default;
+    font-size: 1rem;
+}
+
+.searchBarWrapper:has(.searchInput:focus) .searchButton:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #FFF;
+}
