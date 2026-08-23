@@ -1,58 +1,30 @@
 # Education
 
-## Current / Most Recent Education
+## HTX
 
-### [Institution Name]
+### Subjects
 
-- Degree / Program:
-- Field of study:
-- Location:
-- Start date:
-- End date:
-- Status:
+- Matematik A
+- Fysik A
+- Kemi A
+- Biologi B
+- Engelsk B
+- Dansk A
+- Samfundsfag C
+- Programmering B
+- Byggeri og Energi A
+- Teknologi A
+- Teknologihistorie C
 
-#### Description
+### Languages & Technology
 
-#### Relevant Subjects
-
-- 
-
-#### Relevant Projects
-
-- 
-
-#### Achievements
-
-- 
-
-## Previous Education
-
-### [Institution Name]
-
-- Degree / Program:
-- Field of study:
-- Location:
-- Start date:
-- End date:
-- Status:
-
-#### Description
-
-#### Relevant Subjects
-
-- 
-
-#### Achievements
-
-- 
-
-## Certifications
-
-### [Certification Name]
-
-- Issuer:
-- Date:
-- Status:
-- Description:
-
-## Additional Education
+- Java
+- HTML
+- CSS
+- PHP
+- MySQL
+- phpMyAdmin
+- XAMPP
+- Apache
+- Danish
+- English
