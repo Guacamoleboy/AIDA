@@ -1,0 +1,15 @@
+name: Dify Knowledge Pipeline
+
+on:
+  push:
+    paths:
+      - 'RAG/knowledge/**/*.md'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
