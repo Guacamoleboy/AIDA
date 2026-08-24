@@ -1,3 +1,14 @@
+# ------------------------------------------------------------------------------------------------------
+
+# Version 1.0.0
+# Created by Guacamoleboy
+# Last updated: 24/08-2026
+
+# FILE PURPOSE
+#   - Auto update existing .md files on Dify.ai instead of having to use their UI
+
+# ------------------------------------------------------------------------------------------------------
+
 name: Dify Knowledge Pipeline
 
 on:
@@ -12,10 +23,14 @@ jobs:
   sync:
     runs-on: ubuntu-latest
 
+    ## ---- CHECKOUT REPOSITORY  -----------------------------------------------------------------------
+
     steps:
       - uses: actions/checkout@v6
         with:
-          fetch-depth: 2
+          fetch-depth: 2 # Needed for git diff to know if the file was changed from previous state
+
+      ## ---- SYNC IF CHANGED BY USING DIFY.JSON AS SOURCE OF TRUTH  -----------------------------------
 
       - name: Sync changed documents
         env:

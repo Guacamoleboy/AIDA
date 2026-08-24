@@ -9,7 +9,7 @@
 - Current role: Student
 - Current status: Learning, Coding & Being a better version of myself.
 - Gender: Male
-- Age: 67
+- Age: 28
 
 ## Background
 
