@@ -72,3 +72,24 @@ body::-webkit-scrollbar {
     flex: 1;
     min-height: 0;
 }
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+#dify-chatbot-bubble-button {
+    background-color: #f2d51c !important;
+    right: 30px !important;
+    bottom: 30px !important;
+    border-radius: 0.25rem !important;
+    box-shadow: 0 4px 1px rgba(0, 0, 0, 0.4) !important;
+}
+
+#dify-chatbot-bubble-window {
+    width: 40rem !important;
+    height: 50rem !important;
+    right: 30px !important;
+    left: auto !important;
+}
+
+#dify-chatbot-bubble-button:has(#closeIcon[style*="display: block"]) {
+    transform: translateX(calc(-40rem - 30px));
+}
