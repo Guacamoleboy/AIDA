@@ -3,48 +3,28 @@
         "id": 1,
         "title": "Introduction to AIDA",
         "description": "What are my expectations for AI in the future?",
-        "date": "20/08-2026"
+        "date": "20/08-2026",
+        "series": "AIDA"
     },
     {
         "id": 2,
-        "title": "Title 2",
-        "description": "Description 2",
-        "date": "XX/XX-2026"
+        "title": "RAG-1",
+        "description": "Learning about RAG for my AIDA project.",
+        "date": "21/08-2026",
+        "series": "AIDA"
     },
     {
         "id": 3,
-        "title": "Title 3",
-        "description": "Description 3",
-        "date": "XX/XX-2026"
+        "title": "RAG-2",
+        "description": "Deep learning of RAG and how knowledge cards are implemented in Chatbots like Dify.ai for example.",
+        "date": "24/08-2026",
+        "series": "AIDA"
     },
     {
         "id": 4,
-        "title": "Title 4",
-        "description": "Description 4",
-        "date": "XX/XX-2026"
-    },
-    {
-        "id": 5,
-        "title": "Title 5",
-        "description": "Description 5",
-        "date": "XX/XX-2026"
-    },
-    {
-        "id": 6,
-        "title": "Title 6",
-        "description": "Description 6",
-        "date": "XX/XX-2026"
-    },
-    {
-        "id": 7,
-        "title": "Title 7",
-        "description": "Description 7",
-        "date": "XX/XX-2026"
-    },
-    {
-        "id": 8,
-        "title": "Title 8",
-        "description": "Description 8",
-        "date": "XX/XX-2026"
+        "title": "Kodeagenter",
+        "description": "Learning how agents can be used to complete programming tasks.",
+        "date": "28/08-2026",
+        "series": "AIDA"
     }
 ]

@@ -1,0 +1,74 @@
+.blogSeries {
+    margin-bottom: 2rem;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    overflow: hidden;
+}
+
+.blogSeriesSummary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 1.1rem;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 0.95rem;
+    font-weight: 700;
+    list-style: none;
+}
+
+.blogSeriesSummary::-webkit-details-marker {
+    display: none;
+}
+
+.blogSeriesContent {
+    padding: 0 1.1rem 1rem;
+    border-top: 2px solid rgba(0, 0, 0, 0.08);
+    background-color: rgba(0,0,0,0.2);
+}
+
+.blogSeriesList {
+    margin: 0.9rem 0 0;
+    padding-left: 1.5rem;
+}
+
+.blogSeriesList li {
+    margin-bottom: 0.4rem;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.blogSeriesList li:last-child {
+    margin-bottom: 0;
+}
+
+.blogSeriesList a {
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.blogSeriesList a:hover {
+    color: #FFF;
+}
+
+.blogSeriesCurrent {
+    color: rgba(0,0,0,0.6) !important;
+    font-weight: 700;
+}
+
+.blogSeriesIcon {
+    display: block;
+}
+
+.blogSeriesIconOpen {
+    display: none;
+}
+
+.blogSeries[open] .blogSeriesIcon {
+    display: none;
+}
+
+.blogSeries[open] .blogSeriesIconOpen {
+    display: block;
+}

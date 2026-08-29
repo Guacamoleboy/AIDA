@@ -7,6 +7,8 @@ import ReactMarkdown from 'react-markdown'
 import { getBlogContent } from './blogLoader'
 import meta from '@/shared/data/blog/meta.json'
 import styles from './Blog.module.css'
+import BlogImage from './BlogImage'
+import BlogSeries from '@/features/blog-page/blog-series/BlogSeries'
 
 // ------------------------------------------------------------------------------------------------------
 
@@ -54,11 +56,23 @@ const Blog = () => {
 
             </header>
 
+            {/* Blog Series*/}
+            <BlogSeries />
+
             {/* BLOG CONTENT */}
             <section className={styles.blogContent}>
 
-                <ReactMarkdown>
+                <ReactMarkdown
+
+                    // Image Styling
+                    components={{
+                        img: BlogImage,
+                    }}
+
+                >
+                    {/* Remaining Content */}
                     {blogContent}
+
                 </ReactMarkdown>
 
             </section>

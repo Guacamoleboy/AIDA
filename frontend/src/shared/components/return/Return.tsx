@@ -3,22 +3,32 @@
 // src/shared/components/return/Return.tsx
 
 import styles from './Return.module.css'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 const Return = () => {
 
     // ------------ SETUP ------------------------------------------------------
 
     const navigate = useNavigate()
+    const location = useLocation()
 
     // ------------ EVENTS -----------------------------------------------------
 
     const handleBack = () => {
+
+        // Blog Handle
+        if (location.pathname.startsWith('/blog/')) {
+            navigate('/')
+            return
+        }
+
+        // Everything else (for now)
         if (window.history.length > 1) {
             navigate(-1)
         } else {
             navigate('/')
         }
+
     }
 
     // ------------ RETURN -----------------------------------------------------

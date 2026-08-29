@@ -9,7 +9,7 @@ const SearchInput = () => {
         <input
             className={styles.searchInput}
             type="text"
-            placeholder="What can I help you with .. ?"
+            placeholder="Ask anything about Jonas .."
             aria-label="Search"
         />
     )
