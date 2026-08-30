@@ -34,6 +34,7 @@
     /* Colors */
     --aida-orange: #fabc02;
     --aida-blue: #2550fe;
+    --aida-red: #ff0000;
 
 }
 
@@ -118,6 +119,7 @@ body::-webkit-scrollbar {
 }
 
 #dify-chatbot-bubble-button:has(#closeIcon[style*="display: block"]) {
+    background-color: var(--aida-red) !important;
     transform: translateX(calc(-40rem - 30px));
 }
 
