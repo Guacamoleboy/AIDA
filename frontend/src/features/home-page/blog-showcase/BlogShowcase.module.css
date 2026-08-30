@@ -11,6 +11,10 @@
     gap: 0.75rem;
 }
 
+.blogEntryPage {
+    display: contents;
+}
+
 /* -------------------------------------------------------------------------------------------------------- */
 
 .blogEntry {
@@ -66,4 +70,26 @@
 .blogEntryDescription,
 .blogEntryDate {
     display: none;
+}
+
+@media (max-width: 700px) {
+    .blogEntries {
+        display: flex;
+        gap: 0.75rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+    }
+
+    .blogEntries::-webkit-scrollbar {
+        display: none;
+    }
+
+    .blogEntryPage {
+        flex: 0 0 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+        scroll-snap-align: start;
+    }
 }
