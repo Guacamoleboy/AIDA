@@ -1,0 +1,18 @@
+Evaluate the following student internship report using the provided rubric.
+
+Use the rubric as a baseline for the assessment and evaluate each criteria individually.
+
+RUBRIC:
+{{RUBRIC}}
+
+STUDENT REPORT:
+{{STUDENT_REPORT}}
+
+Return a structured assessment containing the following:
+
+- An overall final score from 0.0 - 10.0.
+- A score from 0.0 to 10.0 for each criteria.
+- A short yet professional feedback for each criteria.
+- Weaknesses and strengths for the report.
+
+The score(s) must be using one decimal only.
