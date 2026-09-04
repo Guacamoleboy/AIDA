@@ -35,6 +35,7 @@ Thumbs.db
 *.iml
 backend/target/
 backend/src/main/resources/http
+/LLM-API-backend/src/main/resources/http/
 backend/logs
 
 # === Editor caches ===
