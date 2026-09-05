@@ -14,9 +14,30 @@ For each criterion:
 Provide:
 - An overall qualitative assessment of the report.
 - Strengths and weaknesses within the overall assessment.
-- Suggestions/questions that can be used for further dialogue with the student.
+- Exactly 4 to 6 actionable suggestions or questions that can be used for further dialogue with the student.
 
 Do not calculate the final overall score. Set overall_score to 0.0 because the application will calculate the final overall score.
+
+Return only valid JSON. Do not add Markdown fences, headings, or explanatory text before or after the JSON.
+Use this exact structure. The suggestions array must contain strings, not objects:
+
+{
+  "overall_score": 0.0,
+  "overall_assessment": "Overall qualitative assessment, including strengths and weaknesses.",
+  "criteria": [
+    {
+      "criterion_name": "Criterion name from the rubric",
+      "score": 0.0,
+      "comment": "Short professional comment"
+    }
+  ],
+  "suggestions": [
+    "Actionable suggestion or question 1",
+    "Actionable suggestion or question 2",
+    "Actionable suggestion or question 3",
+    "Actionable suggestion or question 4"
+  ]
+}
 
 RUBRIC:
 {{RUBRIC}}

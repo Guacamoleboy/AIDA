@@ -2,30 +2,30 @@ package llm.service.external;
 
 import com.openai.client.OpenAIClient;
 import com.openai.client.okhttp.OpenAIOkHttpClient;
+import com.openai.errors.OpenAIRetryableException;
 import com.openai.models.responses.Response;
 import com.openai.models.responses.ResponseCreateParams;
-import llm.config.DotEnv;
+import llm.config.OpenAIConfig;
 import llm.dto.external.request.OpenAIRequest;
+import llm.exception.ApiException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class OpenAIService {
 
     // Attributes
     private final OpenAIClient openAIClient;
+    private static final Deque<Long> REQUEST_TIMESTAMPS = new ArrayDeque<>();
 
     // _________________________________________________________________________________________________________________
 
     public OpenAIService() {
 
-        // DOTENV Setup
-        DotEnv dotEnv = new DotEnv();
-        String apiKey = dotEnv.get("OPENAI_API_KEY");
-
-        // Client Setup
         this.openAIClient = OpenAIOkHttpClient.builder()
-                .apiKey(apiKey)
+                .apiKey(OpenAIConfig.getApiKey())
                 .build();
 
     }
@@ -64,12 +64,12 @@ public class OpenAIService {
         // Input
         String input = userPrompt
                 .replace("{{RUBRIC}}", rubric)
-                .replace("{{SUBMISSION}}", submission);
+                .replace("{{STUDENT_REPORT}}", submission);
 
         // OpenAI request
         OpenAIRequest openAIRequest = new OpenAIRequest();
 
-        openAIRequest.setModel("gpt-5.6-luna");
+        openAIRequest.setModel(OpenAIConfig.getModel());
         openAIRequest.setInstructions(systemPrompt);
         openAIRequest.setInput(input);
 
@@ -91,8 +91,62 @@ public class OpenAIService {
                 .input(openAIRequest.getInput())
                 .build();
 
-        return openAIClient.responses().create(responseCreateParams);
+        for (int attempt = 1; attempt <= OpenAIConfig.getMaxAttempts(); attempt++) {
+            acquireRequestSlot();
 
+            try {
+                return openAIClient.responses().create(responseCreateParams);
+            } catch (OpenAIRetryableException e) {
+                if (attempt == OpenAIConfig.getMaxAttempts()) {
+                    throw new ApiException(
+                            503,
+                            "OpenAI could not process the evaluation after "
+                                    + OpenAIConfig.getMaxAttempts() + " attempts",
+                            e
+                    );
+                }
+
+                waitBeforeRetry(attempt);
+            }
+        }
+
+        throw new ApiException(503, "OpenAI could not process the evaluation");
+
+    }
+
+    // _________________________________________________________________________________________________________________
+
+    private static synchronized void acquireRequestSlot() {
+        long now = System.currentTimeMillis();
+        long oneMinuteAgo = now - 60_000L;
+
+        while (!REQUEST_TIMESTAMPS.isEmpty()
+                && REQUEST_TIMESTAMPS.peekFirst() <= oneMinuteAgo) {
+            REQUEST_TIMESTAMPS.removeFirst();
+        }
+
+        if (REQUEST_TIMESTAMPS.size() >= OpenAIConfig.getMaxRequestsPerMinute()) {
+            throw new ApiException(
+                    429,
+                    "Evaluation limit reached. Try again in a minute"
+            );
+        }
+
+        REQUEST_TIMESTAMPS.addLast(now);
+    }
+
+    // _________________________________________________________________________________________________________________
+
+    private void waitBeforeRetry(int attempt) {
+        long delay = OpenAIConfig.getInitialRetryDelayMillis()
+                * (1L << (attempt - 1));
+
+        try {
+            Thread.sleep(delay);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new ApiException(503, "OpenAI retry was interrupted", e);
+        }
     }
 
     // _________________________________________________________________________________________________________________
