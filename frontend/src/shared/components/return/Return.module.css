@@ -27,3 +27,11 @@
     color: #FFF;
     font-weight: 500 !important;
 }
+
+@media (max-width: 1024px) {
+    .return {
+        position: static;
+        align-self: flex-start;
+        margin: 1.25rem 0 0 max(2rem, calc((100% - 800px) / 2));
+    }
+}

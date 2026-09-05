@@ -26,5 +26,19 @@
         "description": "Learning how agents can be used to complete programming tasks.",
         "date": "28/08-2026",
         "series": "AIDA"
+    },
+    {
+        "id": 5,
+        "title": "LLM-API",
+        "description": "Learning how to design a LLM-API without coding first. Designing rubric, prompts and architecture is the main course for today.",
+        "date": "31/08-2026",
+        "series": "AIDA"
+    },
+    {
+        "id": 6,
+        "title": "LLM-API-IMPL",
+        "description": "Using the designs from previous session to implement into LLM using REST and Java.",
+        "date": "04/09-2026",
+        "series": "AIDA"
     }
 ]
