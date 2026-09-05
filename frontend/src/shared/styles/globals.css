@@ -80,10 +80,18 @@ body::-webkit-scrollbar {
     padding: 5rem 2rem;
 }
 
+@media (max-width: 1024px) {
+    .blogPage {
+        padding-top: 1.5rem;
+    }
+}
+
 /* ----- LAYOUT SPECIFIC | #2.0 --------------------------------------------------------------------------- */
 
 .appLayout {
     height: 100vh;
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     overflow: hidden;
