@@ -1,10 +1,12 @@
 package llm.dto.external.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import java.util.List;
 
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class EvaluationResponse {
 
     // _________________________________________________________________________________________________________________
@@ -48,6 +50,6 @@ public class EvaluationResponse {
     private List<CriterionEvaluationResponse> criteria;
 
     @JsonProperty("suggestions")
-    private List<SuggestionResponse> suggestions;
+    private List<String> suggestions;
 
 }

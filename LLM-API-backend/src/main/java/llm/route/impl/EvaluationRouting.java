@@ -1,7 +1,6 @@
 package llm.route.impl;
 
 import io.javalin.apibuilder.EndpointGroup;
-import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import llm.controller.EvaluationController;
 import static io.javalin.apibuilder.ApiBuilder.path;
@@ -15,8 +14,7 @@ public class EvaluationRouting {
     // _________________________________________________________________________________________________________________
 
     public EvaluationRouting(EntityManagerFactory emf) {
-        EntityManager em = emf.createEntityManager();
-        this.evaluationController = new EvaluationController(em);
+        this.evaluationController = new EvaluationController();
     }
 
     public EndpointGroup routes() {
@@ -24,7 +22,7 @@ public class EvaluationRouting {
 
             path("/evaluate", () -> {
 
-                post("/", evaluationController::evaluate);
+                post(evaluationController::evaluate);
 
             });
 
