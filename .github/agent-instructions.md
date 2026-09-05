@@ -6,11 +6,12 @@ AIDA is a course provided by my School. I must create a portfolio and follow ins
 
 ### Root Folders
 
-- '.devcontainer/': Folder for dev environments
-- '.github/': CI / CD, Workflows, Agents and other important tasks related to Github and Agents
-- 'docs/': Files and important documents for documentation reasons
-- 'frontend/': Portfolio website for AIDA
-- 'RAG/': Dify.ai knowledge and instructions
+- `.devcontainer/`: Folder for dev environments
+- `.github/`: CI / CD, Workflows, Agents and other important tasks related to Github and Agents
+- `docs/`: Files and important documents for documentation reasons
+- `frontend/`: Portfolio website for AIDA
+- `RAG/`: Dify.ai knowledge and instructions
+- `LLM-API-backend/`: Java REST App for Rubric and client learning purposes
 
 ### Core Architecture (`frontend/` folder)
 
@@ -21,6 +22,16 @@ AIDA is a course provided by my School. I must create a portfolio and follow ins
 - `frontend/src/features/` - Components that are page specific only
 - `frontend/src/features/any-page/` - Components are page based. For example we have `frontend/src/features/home-page/` which relates to the  `frontend/src/app/pages/HomePage`. This means all components with relation to the HomePage that are not global or shared goes in that folder.
 - `frontend/src/shared/` - Used for shared context across the portfolio. Globals, types, styling and misc.
+
+### Java Backend Architecture (`LLM-API-backend/` folder)
+
+- `LLM-API-backend/src/` - Main application folder. Like any other java application. Maven.
+- `LLM-API-backend/.idea/` - Don't adjust manually 
+- `LLM-API-backend/.mvn/` - Don't adjust manually 
+- `LLM-API-backend/docs/` - Folder for documentation, learning purpose and general personal knowledge
+- `LLM-API-backend/target/` - Don't adjust manually 
+- `LLM-API-backend/src/main/resources` - Java specific resources includes things such as rubric, prompts, student reports and env files. Don't ever leak the env files.
+- `LLM-API-backend/src/main/java/llm/` - The Java application ran through Main.java
 
 ### Finding Related Code
 
