@@ -31,12 +31,12 @@ next-env.d.ts
 Thumbs.db
 
 # === IntelliJ / JetBrains ===
-.idea/
+/LLM-API-backend/.idea/
 *.iml
-backend/target/
-backend/src/main/resources/http
+/LLM-API-backend/.mvn/
+/LLM-API-backend/target/
 /LLM-API-backend/src/main/resources/http/
-backend/logs
+/LLM-API-backend/logs
 
 # === Editor caches ===
 .vscode/
