@@ -9,12 +9,7 @@ const BlogShowcase = () => {
     return (
         <section className={styles.blogShowcase}>
 
-            <div className={styles.blogEntries}>
-
-                {/* CHILD */}
-                <BlogEntries />
-
-            </div>
+            <BlogEntries />
 
         </section>
     )

@@ -3,6 +3,7 @@
 // src/features/blog-page/blog-series/BlogSeries.tsx
 
 import { Link, useParams } from 'react-router-dom'
+import { useRef } from 'react'
 import styles from './BlogSeries.module.css'
 import meta from '@/shared/data/blog/meta.json'
 
@@ -15,6 +16,13 @@ const BlogSeries = () => {
 
     // Gets the ID from the URL
     const currentId = Number(id)
+    const seriesRef = useRef<HTMLDetailsElement>(null)
+
+    const handleSeriesLinkClick = () => {
+        if (seriesRef.current) {
+            seriesRef.current.open = false
+        }
+    }
 
     // Find the current blog
     const currentBlog = meta.find(
@@ -37,7 +45,10 @@ const BlogSeries = () => {
     }
 
     return (
-        <details className={styles.blogSeries}>
+        <details
+            ref={seriesRef}
+            className={styles.blogSeries}
+        >
 
             <summary className={styles.blogSeriesSummary}>
                 <span>
@@ -70,7 +81,10 @@ const BlogSeries = () => {
 
                             ) : (
 
-                                <Link to={`/blog/${blog.id}`}>
+                                <Link
+                                    to={`/blog/${blog.id}`}
+                                    onClick={handleSeriesLinkClick}
+                                >
                                     {blog.title}
                                 </Link>
 

@@ -40,5 +40,40 @@
         "description": "Using the designs from previous session to implement into LLM using REST and Java.",
         "date": "04/09-2026",
         "series": "AIDA"
+    },
+    {
+        "id": 7,
+        "title": "Spec-Driven Development",
+        "description": "Reflecting on specifications, programming as theory building and working with AI coding agents.",
+        "date": "14/09-2026",
+        "series": "AIDA"
+    },
+    {
+        "id": 8,
+        "title": "Company Presentation",
+        "description": "Learning about Engestofte Gods and exploring real business problems that AI might help solve.",
+        "date": "10/09-2026",
+        "series": "AIDA"
+    },
+    {
+        "id": 9,
+        "title": "Project Start",
+        "description": "Exploring a project idea around Engestofte Gods, Trello and a shared source of truth.",
+        "date": "14/09-2026",
+        "series": "AIDA"
+    },
+    {
+        "id": 10,
+        "title": "Collaborative Development",
+        "description": "Learning how people and AI agents can collaborate through clear tickets, ownership and guardrails.",
+        "date": "18/09-2026",
+        "series": "AIDA"
+    },
+    {
+        "id": 11,
+        "title": "Security Aspects",
+        "description": "Reflecting on secrets, permissions, prompt injection and trust when working with AI agents.",
+        "date": "21/09-2026",
+        "series": "AIDA"
     }
 ]
