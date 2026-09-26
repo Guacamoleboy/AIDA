@@ -30,17 +30,19 @@ const BlogEntries = () => {
     }, [])
 
     const pageSize = isMobile ? 4 : 8
-    const blogEntryPages = data.reduce<(typeof data)[]>((pages, entry, index) => {
-        const pageIndex = Math.floor(index / pageSize)
+    const blogEntryPages = [...data].reverse().reduce<(typeof data)[]>(
+        (pages, entry, index) => {
+            const pageIndex = Math.floor(index / pageSize)
 
-        if (!pages[pageIndex]) {
-            pages[pageIndex] = []
-        }
+            if (!pages[pageIndex]) {
+                pages[pageIndex] = []
+            }
 
-        pages[pageIndex].push(entry)
+            pages[pageIndex].push(entry)
 
-        return pages
-    }, [])
+            return pages
+        }, [],
+    )
 
     useEffect(() => {
         const blogEntries = blogEntriesRef.current

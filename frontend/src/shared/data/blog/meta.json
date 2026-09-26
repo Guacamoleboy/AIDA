@@ -75,5 +75,12 @@
         "description": "Reflecting on secrets, permissions, prompt injection and trust when working with AI agents.",
         "date": "21/09-2026",
         "series": "AIDA"
+    },
+    {
+        "id": 12,
+        "title": "Project Update",
+        "description": "Choosing the right project from materials and Johans requests",
+        "date": "25/09-2026",
+        "series": "AIDA"
     }
 ]
