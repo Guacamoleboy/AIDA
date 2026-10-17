@@ -82,5 +82,26 @@
         "description": "Choosing the right project from materials and Johans requests",
         "date": "25/09-2026",
         "series": "AIDA"
+    },
+    {
+        "id": 13,
+        "title": "Ethical approach to data",
+        "description": "Data is personal information. How do we handle it?",
+        "date": "25/09-2026",
+        "series": "AIDA"
+    },
+    {
+        "id": 14,
+        "title": "MCP",
+        "description": "Notes and thoughts of how MCP works and regarding my project",
+        "date": "02/09-2026",
+        "series": "AIDA"
+    },
+    {
+        "id": 15,
+        "title": "Project end",
+        "description": "Finishing the project.",
+        "date": "14/10-2026",
+        "series": "AIDA"
     }
 ]
